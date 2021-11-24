@@ -17,6 +17,9 @@
 		"TripFaresDataLakeStorageLinkedService_properties_typeProperties_url": {
 			"value": "@{concat('https://',linkedService().datalakeAccountName,'.dfs.core.windows.net')}"
 		},
+		"datalakestore_properties_typeProperties_url": {
+			"value": "https://datalakechmand.dfs.core.windows.net/"
+		},
 		"keyVaultLinkedservice_properties_typeProperties_baseUrl": {
 			"value": "@{concat('https://',linkedService().keyVaultName,'.vault.azure.net/')}"
 		}
