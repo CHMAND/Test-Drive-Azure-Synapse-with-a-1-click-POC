@@ -1,0 +1,42 @@
+{
+	"name": "DataFlow_limited",
+	"properties": {
+		"activities": [
+			{
+				"name": "Data flow_limited",
+				"type": "ExecuteDataFlow",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "1.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataflow": {
+						"referenceName": "tripFaresDataTransformations_limited",
+						"type": "DataFlowReference",
+						"datasetParameters": {
+							"TripDataCSV": {
+								"datalakeAccountName": "con35fqasu6drhdupoc",
+								"keyVaultName": "kvcon35fqasu6drhdupoc"
+							},
+							"FaresDataCSV": {
+								"keyVaultName": "kvcon35fqasu6drhdupoc",
+								"datalakeAccountName": "con35fqasu6drhdupoc"
+							}
+						}
+					},
+					"compute": {
+						"coreCount": 8,
+						"computeType": "General"
+					},
+					"traceLevel": "Fine"
+				}
+			}
+		],
+		"annotations": []
+	}
+}
